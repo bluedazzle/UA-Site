@@ -1,0 +1,53 @@
+﻿@model IEnumerable<test2.Models.ListNewsViewModel>
+
+@{
+    ViewBag.Title = "社联新闻";
+}
+
+<h2>社联新闻</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tittle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Summery)
+        </th>
+    </tr>
+@if (Model.Count() == 0)
+{
+    <tr>
+        <td colspan="4">
+            暂无任何新闻
+        </td>
+    </tr>
+}
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.ActionLink(item.Tittle, "Details", new { Id = item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Summery)
+        </td>
+    </tr>
+}
+
+</table>

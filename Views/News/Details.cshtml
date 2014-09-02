@@ -1,0 +1,48 @@
+﻿@model test2.Models.NewsDetailModel
+
+@{
+    ViewBag.Title = Model.Tittle;
+}
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Tittle)</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Body)
+        </dt>
+
+        <dd>
+            @Html.Raw( Model.Body)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisiteCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisiteCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("返回", "Index")
+</p>

@@ -1,0 +1,66 @@
+﻿@model test2.Models.InsertNewsModel
+
+@{
+    ViewBag.Title = "发布新闻";
+}
+@Styles.Render("~/Content/ueditor/themes/iframe.css")
+
+<h2>发布新闻</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tittle, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Tittle)
+                @Html.ValidationMessageFor(model => model.Tittle)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Author, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Author)
+                @Html.ValidationMessageFor(model => model.Author)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Body, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Body)
+                @Html.ValidationMessageFor(model => model.Body)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="提交" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("返回", "Index")
+</div>
+@section scripts {
+    @Scripts.Render("~/bundles/ueditor")
+<script type="text/javascript">
+    window.UEDITOR_HOME_URL = '@Url.Content("~/Content/ueditor/")';
+    var editor = new baidu.editor.ui.Editor({
+        autoHeightEnabled: true,//高度自动增长
+        minFrameHeight: 800//最小高度
+    });
+    editor.render('Body');
+</script>
+
+
+
+}

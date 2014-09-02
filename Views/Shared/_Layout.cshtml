@@ -1,0 +1,18 @@
+﻿@{Layout = "~/Views/Shared/_BasicLayout.cshtml";}
+<div class="splash">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <img src="~/Content/logo1.png" alt="" class="pull-left logo" />
+            </div>
+        </div>
+        @RenderSection("before", required: false)
+    </div>
+</div>
+<div class="container body-content">
+    @Html.Action("Navigator", "Home", new { controller = ViewContext.RouteData.Values["controller"] })
+    @RenderBody()
+</div>
+@section scripts{
+    @RenderSection("scripts", required: false)
+}

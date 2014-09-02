@@ -1,0 +1,169 @@
+﻿@{
+    ViewBag.Title = "首页";
+    Layout = "~/Views/Shared/_BasicLayout.cshtml";
+}
+<div class="splash">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <img src="~/Content/logo1.png" alt="" class="pull-left logo" />
+            </div>
+        </div>
+        <div class="headwarp">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="http://www.uestc.edu.cn/public/2014/05/zi01.png" alt="First slide" style="width:100%;">
+                    </div>
+                    <div class="item">
+                        <img src="http://www.uestc.edu.cn/public/2014/05/zi02.png" alt="Second slide" style="width:100%;">
+                    </div>
+                    <div class="item">
+                        <img src="http://www.uestc.edu.cn/public/2014/05/zi03.png" alt="Third slide" style="width:100%;">
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container body-content">
+    <div class="row">
+        @Html.Action("Navigator","Home")
+    </div>
+    <div class="row">
+        <div class=" col-md-11">
+            <h3>公告</h3>
+        </div>
+        <div class="col-sm-1">
+            <h3><a href="#" class="more">更多</a></h3>
+        </div>
+    </div>
+    <div class="row announ">
+        <div class="col-md-4">
+            <div class="dateblock text-center pull-left">
+                <span>2014.7</span>
+                <h4 class="text-center">18</h4>
+            </div>
+            <div class="tn">
+                <h4>第十四届全国大学生游泳锦标赛落幕</h4>
+                <p class="text-muted">经过四天激烈角逐，7月17日，第十四届全国大学生游泳锦标赛在我校清水河校区游泳馆落下帷幕。副校长朱宏出席闭幕仪式并宣布比赛闭幕。</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="dateblock text-center pull-left">
+                <span>2014.7</span>
+                <h4 class="text-center">18</h4>
+            </div>
+            <div class="tn">
+                <h4>学校2014年招生录取工作形势喜人</h4>
+                <p class="text-muted">“今年电子科大高考招生录取总体情况非常好。尤其是在四川，创下了学校有史以来理科本科一批次的录取分数线记录。”在忙碌的2014年高考录取场，学校招办主任方曼接受采访时表示。</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="dateblock text-center pull-left">
+                <span>2014.7</span>
+                <h4 class="text-center">14</h4>
+            </div>
+            <div class="tn">
+                <h4>工作通知：计划财务处暑假值班安排</h4>
+                <p class="text-muted">7月15日—8月27日暑假期间，计划财务处清水河校区办公时间为9：00—12:00、14:00—17:00；沙河校区办公时间为8:30—11:30、14:30—17:30。</p>
+            </div>
+        </div>
+    </div>
+    @for (int i = 0; i < 3; i++)
+    {
+        <div class="row">
+            <div class="@(i % 2 == 0 ? "col-md-9" : "col-md-3 col-md-push-9")">
+                <h3>新闻类别@(i + 1)</h3>
+            </div>
+            <div class="@(i % 2 == 0 ? "col-md-3" : "col-md-9 col-md-pull-3") hidden-sm hidden-xs">
+                <h3>更多</h3>
+            </div>
+        </div>
+        <div class="row news">
+            @if (i % 2 == 1)
+            {
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <ul class="list-unstyled">
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                    </ul>
+                </div>
+            }
+            <div class="col-md-3">
+                <div class="tn">
+                    <h4>第十四届全国大学生游泳锦标赛落幕</h4>
+                    <h6 class="text-right text-muted">-2014.7.18</h6>
+                    <p class="text-muted">经过四天激烈角逐，7月17日，第十四届全国大学生游泳锦标赛在我校清水河校区游泳馆落下帷幕。副校长朱宏出席闭幕仪式并宣布比赛闭幕。</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="tn">
+                    <a class="thumbnail" href="#">
+                        <img src="http://www.new1.uestc.edu.cn:40525/Image/t_Array/2014-07-15/60e4027569848b912cd363d8bb07f354.jpg">
+                    </a>
+                    <h4>学校2014年招生录取工作形势喜人</h4>
+                    <h6 class="text-right text-muted">-2014.7.18</h6>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="tn">
+                    <h4>工作通知：计划财务处暑假值班安排</h4>
+                    <h6 class="text-right text-muted">-2014.7.14</h6>
+                    <p class="text-muted">7月15日—8月27日暑假期间，计划财务处清水河校区办公时间为9：00—12:00、14:00—17:00；沙河校区办公时间为8:30—11:30、14:30—17:30。</p>
+                </div>
+            </div>
+            @if (i % 2 == 0)
+            {
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <ul class="list-unstyled">
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                        <li><h5><span class="glyphicon glyphicon-chevron-right"></span> <a href="#">新闻条目</a></h5></li>
+                    </ul>
+                </div>
+            }
+        </div>
+    }
+</div>
+@*http://v3.bootcss.com/customize/?id=1442a2bc3fc0a6187c50*@
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.carousel').ready(function () {
+                $('.carousel').carousel({
+                    interval: 4000
+                })
+            });
+            //$(".news .tn").hover(function (event) {
+            //    $(event.target).children("a.thumbnail").slideUp();
+            //}, function (event) {
+            //    $(event.target).children("a.thumbnail").slideDown();
+            //})
+        });
+    </script>
+}
