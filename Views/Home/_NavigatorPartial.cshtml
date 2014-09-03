@@ -4,10 +4,10 @@
                             {<text>active</text>}">
             <a href="@Url.Action("Index", "News")">社联新闻 <span class="caret" /></a>
             <ul class="dropdown-menu">
-                @foreach (test2.Models.ContentType t in (List<test2.Models.ContentType>)ViewBag.ContentTypes)
+                @*@foreach (test2.Models.ContentType t in (List<test2.Models.ContentType>)ViewBag.ContentTypes)
                 {
                     <li>@Html.ActionLink(t.Name,"Index","News",new {id=t.Id},null)</li>
-                }
+                }*@
             </ul>
 
         </li>

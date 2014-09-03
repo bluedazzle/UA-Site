@@ -18,7 +18,7 @@ namespace test2.Controllers
         public PartialViewResult Navigator(string controller)
         {
             ViewBag.Controller = controller;
-            ViewBag.ContentTypes = context.ContentTypes.ToList();
+            //ViewBag.ContentTypes = context.ContentTypes.ToList();
             return PartialView("_NavigatorPartial");
         }
 
